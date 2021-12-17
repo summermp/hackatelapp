@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <title>Consulta</title>
+</head>
+<body>
+<div>LISTADO DE CONSULTA</div>
+<a th:href="@{/agregarconsulta}">Crear consulta</a>
+<div th:if="${consultas !=null and !consultas.empty}">
+    <table id="mitabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CONTADOR</th>
+            <th>ID PAGINA</th>
+            <th>Eliminar</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="consulta: ${consultas}">
+            <td th:text="${consulta.id}">ID</td>
+            <td th:text="${consulta.mensaje}">Nombre</td>
+            <td th:text="${consulta.tiempoinicio}">T inicio</td>
+            <td th:text="${consulta.tiempofin}">T fin</td>
+            <td th:text="${consulta.canalconsulta.id}">Id Canal</td>
+            <td th:text="${consulta.consultausuario.id}">Id Usuario</td>
+            <td th:text="${consulta.consultausuario.id}">Id Usuario</td>
+            <td><a style="color: red;" th:onclick="eliminar([[${consulta.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
+            <td><a th:href="@{/editarconsulta/}+${consulta.id}"><i class="fas fa-edit"></i> Editar</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:if="${consultas == null and consultas.empty}">La lista de consultas esta vacia</div>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../js/fonawesome.js"></script>
+</body>
+</html>

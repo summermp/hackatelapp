@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <title>Canal</title>
+</head>
+<body>
+<div>LISTADO DE CANAL</div>
+<a th:href="@{/agregarcanal}">Crear canal</a>
+<div th:if="${canals !=null and !canals.empty}">
+    <table id="mitabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CONTADOR</th>
+            <th>ID PAGINA</th>
+            <th>Eliminar</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="canal: ${canals}">
+            <td th:text="${canal.id}">ID</td>
+            <td th:text="${canal.nombre}">Nombre</td>
+            <td th:text="${canal.contador}">Contador</td>
+            <td th:text="${canal.canalpagina.id}">Id pagina</td>
+            <td><a style="color: red;" th:onclick="eliminar([[${canal.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
+            <td><a th:href="@{/editarcanal/}+${canal.id}"><i class="fas fa-edit"></i> Editar</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${canals == null and canals.empty}">La lista de canals esta vacia</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../js/fonawesome.js"></script>
+</body>
+</html>

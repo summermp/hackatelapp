@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <title>FRECUENTE</title>
+</head>
+<body>
+<div>LISTADO DE CANAL</div>
+<a th:href="@{/agregarfrecuente}">Crear frecuente</a>
+<div th:if="${frecuentes !=null and !frecuentes.empty}">
+    <table id="mitabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CONTADOR</th>
+            <th>ID PAGINA</th>
+            <th>Eliminar</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="frecuente: ${frecuentes}">
+            <td th:text="${frecuente.id}">ID</td>
+            <td th:text="${frecuente.pregunta}">Nombre</td>
+            <td th:text="${frecuente.contador}">Contador</td>
+            <td th:text="${frecuente.paginafrecuente.id}">Id pagina</td>
+            <td><a style="color: red;" th:onclick="eliminar([[${frecuente.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
+            <td><a th:href="@{/editarfrecuente/}+${frecuente.id}"><i class="fas fa-edit"></i> Editar</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${frecuentes == null and frecuentes.empty}">La lista de frecuentes esta vacia</div>
+<script type="text/javascript" src="../js/fonawesome.js"></script>
+</body>
+</html>

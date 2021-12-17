@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <title>Canal</title>
+</head>
+<body>
+<div>LISTADO DE PAGINA</div>
+<a th:href="@{/agregarpagina}">Crear pagina</a>
+<div th:if="${paginas !=null and !paginas.empty}">
+    <table id="mitabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>Eliminar</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pagina: ${paginas}">
+            <td th:text="${pagina.id}">ID</td>
+            <td th:text="${pagina.nombre}">Nombre</td>
+            <td><a style="color: red;" th:onclick="eliminar([[${pagina.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
+            <td><a th:href="@{/editarpagina/}+${pagina.id}"><i class="fas fa-edit"></i> Editar</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${paginas == null and paginas.empty}">La lista de paginas esta vacia</div>
+<script type="text/javascript" src="../js/fonawesome.js"></script>
+</body>
+</html>

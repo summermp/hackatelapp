@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <title>Usuario</title>
+</head>
+<body>
+<div>LISTADO DE USUARIOS</div>
+<a th:href="@{/agregarusuario}">Crear usuario</a>
+<div th:if="${usuarios !=null and !usuarios.empty}">
+    <table id="mitabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>USUARIO</th>
+            <th>CLAVE</th>
+            <th>Eliminar</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario: ${usuarios}">
+            <td th:text="${usuario.id}">ID</td>
+            <td th:text="${usuario.usuario}">Nombre</td>
+            <td th:text="${usuario.clave}">Clave</td>
+            <td><a style="color: red;" th:onclick="eliminar([[${usuario.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
+            <td><a th:href="@{/editarusuario/}+${usuario.id}"><i class="fas fa-edit"></i> Editar</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${usuarios == null and usuarios.empty}">La lista de usuarios esta vacia</div>
+<script type="text/javascript" src="../js/fonawesome.js"></script>
+
+</body>
+</html>
