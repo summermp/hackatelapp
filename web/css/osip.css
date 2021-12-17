@@ -1,0 +1,324 @@
+@import url("../css/variables.css");
+/* body {
+            width: auto; */
+        /* background-color: hsl(196.2, 100%, 35.7%); */
+        /* background-color: #FFCCCC; */
+        /* background-color: #2F3333; */
+        /* color: #0436a1;
+            #0085b6; */
+        /* border: solid red;
+        } */
+/* color de fondod osiptel #00B5E2 */
+        .row {
+            display: flex;
+            flex-flow: row nowrap;
+            text-align: center;
+            justify-content: center;
+            border: solid red;
+        }
+
+        #nav-ul {
+            list-style: none;
+            display: flex;
+            flex-flow: row nowrap;
+            text-align: center;
+            justify-content: space-around;
+            border: solid red;
+        }
+
+        .nav-li:nth-child(2),
+        .nav-li:nth-child(3),
+        .nav-li:nth-child(4),
+        .nav-li:nth-child(5) {
+            background-color: #fff;
+            width: 10%;
+            border: solid red;
+            margin-left: 2px;
+        }
+
+        /* li:first-child {
+        } */
+        .nav-li {
+            display: flex;
+            flex-flow: row nowrap;
+            /* text-align: center; */
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            /* align-content: center; */
+        }
+
+        .nav-li:first-child {
+            /* padding-left: -100%; */
+            justify-content: right;
+            width: 15%;
+        }
+
+        .nav-li:first-child img {
+            width: 100%;
+            border: solid blue;
+            box-sizing: border-box;
+            height: 100%;
+            margin-left: 0;
+        }
+
+        .nav-li:hover {
+            color: var(--boton);
+            border: solid green;
+        }
+
+        /* CANALES */
+        #canal-ul {
+            list-style: none;
+            padding-left:0;
+            display: flex;
+            flex-flow: column wrap;
+            text-align: center;
+            width: 50px;
+            margin-left:90%;
+            margin-top: 15%;
+            position: fixed;
+        }
+
+        #redsocial {
+              list-style: none;
+              padding-left:0;
+              display: flex;
+              flex-flow: column wrap;
+              text-align: center;
+              width: 50px;
+              padding-right: 0;
+              margin-left:70%;
+              padding-top:2px;
+              margin-top: 11%;
+              position: fixed;
+              border: solid var(--naranja);
+        }
+        .rs-icon{
+            font-size: 1.5rem;
+        }
+        .canal {
+            border: solid blue;
+            width: 100%;
+        }
+        .canal-icon{
+            font-size:2rem;
+        }
+        #llamada{
+             list-style: none;
+             display: flex;
+             align-content: center;
+             flex-flow: column wrap;
+             padding-left:0;
+             padding-right: 0;
+             padding-top:2px;
+             background-color: var(--fondo);
+        }
+        #preguntas{
+            list-style: none;
+            display: flex;
+            align-content: center;
+            text-align: center;
+            flex-flow: column wrap;
+            padding-left:0;
+            padding-right: 0;
+            padding-top:2px;
+            padding-bottom: 2px;
+            background-color: var(--fondo);
+            border: solid red;
+        }
+        .frecuentes{
+            border: solid white;
+            border-radius: 8px;
+            margin-bottom:5px;
+            width: 20%;       
+            color: white;     
+        }
+
+        .frecuentes:hover{
+            background-color: white;
+            color: var(--naranja);
+        }
+
+
+        .fono{
+            border: solid white;
+            background-color:var(--fondo);
+            height: 20px;
+            margin-bottom: 2px;
+            border-radius: 8px;
+            padding: 2px;
+        }
+        .fono:hover{
+            background-color:white;
+            color: white;
+        }
+        #btndaltonico {
+            display: block;
+            border-radius: 50%;
+            margin: -5px 0 -5px 15px;
+            top: 80%;
+            padding: 0 0 0 0;
+            border: none;
+            cursor: pointer;
+            /* border: 1px solid blue; */
+            height: auto;
+            position: fixed;
+        }
+        .fa-universal-access {
+            margin-bottom: -1.05px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        #icondaltonico {
+            /* border: 1px solid red;                                                                                                                                                 */
+            height: auto;
+            margin-bottom: -50%;
+            position: relative;
+            font-size: 3rem;
+        }
+        
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #titulo-modal {
+            text-align: center;
+        }
+
+        #descripcion-modal {
+            text-align: center;
+        }
+
+        /* .numerofono {
+            margin-right: 0%;
+            margin-left: 0%;
+        } */
+
+        .llamada-icon {
+            display: inline-block;
+        }
+
+        /* .llamada-icon> .numerofono{
+             float: left;
+             clear: left;
+        }
+ */
+        .tel{
+            text-decoration: none;
+        }
+        .nav-icon{
+            color: orange;
+        }
+        .fa-facebook-messenger{
+            color: blue;
+        }
+        ..fa-facebook{
+            color: blue;
+        }
+        .fa-instagram{
+            color: red;
+        }
+        .fa-youtube{
+            color: red;
+        }
+        .fa-spotify{
+            color: green;
+        }
+        .fa-whatsapp{
+            color: green;
+        }
+        .fa-tiktok{
+            color: black;
+        }
+        .fa-twitter{
+            color: blue;
+        }
+        .fa-question-circle{
+            color: blue;
+            cursor: help;
+        }
+        .fa-comments{
+            cursor: pointer;
+            color:#eebb99;
+        }
+        .fa-user-headset{
+            color:black;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:550px) {
+            .nav-li:nth-child(5) {
+                margin-left: 0%;
+                /* margin-right: 5%; */
+            }
+
+            .nav-li:nth-child(1) {
+                margin-left: 0%;
+            }
+
+            #nav-ul {
+                padding-left: 0;
+                justify-content: space-between;
+            }
+
+            #canal-ul{
+                margin-left: 80%;
+                margin-top: 50%;
+                margin-right:12%;
+            }
+            #redsocial{
+                margin-left: 60%;
+                margin-top: 50%;
+                margin-right:15%;
+
+            }
+            .nav-titulo {
+                display: none;
+            }
+        }
