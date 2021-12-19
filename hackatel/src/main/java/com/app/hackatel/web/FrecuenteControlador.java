@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 @Controller
 public class FrecuenteControlador {
 
@@ -31,6 +33,7 @@ public class FrecuenteControlador {
         frecuenteService.guardar(frecuente);
         return "redirect:/frecuente";
     }
+
     @GetMapping("/editarfrecuente/{id}")//ya existe lo asocia
     public String editar(Frecuente frecuente, Model model){
         frecuente=frecuenteService.buscarFrecuente(frecuente);
@@ -42,6 +45,11 @@ public class FrecuenteControlador {
     public String eliminar(Frecuente frecuente){
         frecuenteService.eliminar(frecuente);
         return "redirect:/frecuente";
+    }
+
+    @PostMapping("/actualizarfrecuente")
+    public void actualizarcanal(@RequestParam("idfrecuente") String idfrecuente, Model model){
+        frecuenteService.actualizarFrecuente(Integer.parseInt(idfrecuente));
     }
 
 }

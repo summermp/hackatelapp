@@ -18,12 +18,10 @@
 <form th:action="@{/guardarusuario}"  method="POST" th:object="${usuario}" id="form" onsubmit="return mySubmit(this)">
     <div id="row-form">
         <div class="col-1">
-            <input type="hidden" th:field="*{id}">
-            <input type="text" id="nombre" name="nombre"
-                   placeholder="Ingrese usuario" th:field="*{usuario}" autofocus/>
+            <input type="hidden" th:field="*{id}"/>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese usuario" th:field="*{nombre}" autofocus/>
         </div>
         <div class="col-1">
-            <input type="hidden" th:field="*{id}">
             <input type="text" id="clave" name="clave"
                    placeholder="Ingrese clave" th:field="*{clave}" autofocus/>
         </div>

@@ -19,7 +19,7 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
-    private String usuario;
+    private String nombre;
 
     private String clave;
 

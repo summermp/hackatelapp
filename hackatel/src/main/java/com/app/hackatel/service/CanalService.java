@@ -6,12 +6,14 @@ import java.util.List;
 
 public interface CanalService {
 
-    public List<Canal> listaCanales();
+    List<Canal> listaCanales();
 
-    public void guardar(Canal canal);
+    void guardar(Canal canal);
 
-    public void eliminar(Canal canal);
+    void eliminar(Canal canal);
 
-    public Canal buscarCanal(Canal canal);
+    Canal buscarCanal(Canal canal);
+
+    void actualizarCanal(Integer id);
 
 }

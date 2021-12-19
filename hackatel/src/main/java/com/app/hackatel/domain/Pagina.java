@@ -20,6 +20,8 @@ public class Pagina implements Serializable {
 
     private String nombre;
 
+    private int vista;
+
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy="canalpagina",cascade = CascadeType.ALL)
     private List<Canal> canal;

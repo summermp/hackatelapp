@@ -25,7 +25,7 @@
         <tbody>
         <tr th:each="usuario: ${usuarios}">
             <td th:text="${usuario.id}">ID</td>
-            <td th:text="${usuario.usuario}">Nombre</td>
+            <td th:text="${usuario.nombre}">Nombre</td>
             <td th:text="${usuario.clave}">Clave</td>
             <td><a style="color: red;" th:onclick="eliminar([[${usuario.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
             <td><a th:href="@{/editarusuario/}+${usuario.id}"><i class="fas fa-edit"></i> Editar</a></td>

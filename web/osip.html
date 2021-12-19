@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="nada">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
     <title>Osip</title>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"> -->
 
     <!-- https://responsivevoice.org/api/ -->
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=qGXUIOZA"></script>
-    <link rel="stylesheet" href="../css/osip.css">
+    <link rel="stylesheet" href="/css/osip.css">
 
     <!-- Canales de atentioxn
 
@@ -21,116 +22,464 @@ https://www.osiptel.gob.pe/portal-del-usuario/lo-que-debes-saber/guia-de-informa
 </head>
 
 <body>
-
     <header>
         <nav>
             <ul id="nav-ul">
                 <li class="nav-li"><img src="img/logo.png" alt=""></li>
-                <li class="nav-li"><span class="nav-titulo">SERVICIO</span>&nbsp <span class="nav-icon"> <i
-                            class="fas fa-hand-sparkles"></i></span></li>
-                <li class="nav-li"><span class="nav-titulo">CONSULTA</span>&nbsp <span class="nav-icon"> <i
+                <li class="nav-li"><a href="#pfrecuentes" class="nava">
+                    <span class="nav-titulo">¡TE ORIENTAMOS!</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-sparkles"></i></span>
+                </a></li>
+                <li class="nav-li"><span class="nav-titulo">TUS DERECHOS</span>&nbsp <span class="nav-icon"> <i
                             class="fas fa-hand-point-left"></i></span></li>
-                <li class="nav-li"><span class="nav-titulo">FORMULARIO</span>&nbsp <span class="nav-icon"> <i
-                            class="fas fa-hand-pointer"></i></span></li>
-                <li class="nav-li"><span class="nav-titulo">AYUDA</span>&nbsp <span class="nav-icon"> <i
-                            class="fas fa-praying-hands"></i></span></li>
+                <li class="nav-li"><a href="#pfrecuentes" class="nava"
+                    ><span class="nav-titulo">PREGUNTAS FRECUENTES</span>&nbsp <span class="nav-icon"> <i
+                            class="fas fa-hand-pointer"></i></span></a></li>
+                <li class="nav-li" id="#canal-ul">
+                    <a href="#pfrecuentes" class="nava" >
+                        <span class="nav-titulo">CANALES DE ATENCIÓN</span>&nbsp <span class="nav-icon"> <i
+                        class="fas fa-praying-hands"></i></span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
+
+    <button id="btnaudio">
+        <span class="rs-icon">
+            <i onclick="cambiarAudio(this)" class="fas fa-volume-up" ></i>
+        </span>
+        <span class="tooltiptext">Desactivar audio</span>    
+    </button>
+
     <!-- <div class="row"> -->
     <button id="btndaltonico">
         <span id="icondaltonico">
-            <i class="fas fa-universal-access"></i>
+        <i class="fas fa-universal-access" onclick="cambiarIcono(this)"></i>
         </span>
+        <span class="tooltiptext">Recomendado para personas daltónicas</span>    
     </button>
     <!-- </div> -->
-
     <ul id="canal-ul">
-        <li class="canal"><span class="canal-icon"><i class="fas fa-question-circle"></i></span></li>
-        <li class="canal" id="canal-3"><span class="canal-icon"><i class="fas fa-comments"></i></span></li>
-        <li class="canal" id="abrirModal"><span class="canal-icon"><i class="fas fa-user-headset"></i></span></li>
+        <li class="canal abrirModal1" id="canal-1"><span class="canal-icon"><i class="fas fa-paper-plane"></i>
+        </span>
+        <span class="tooltiptext"><b>Formularios</b> <br/>
+            Tiempo respuesta <i class="tiemporespuesta">10 min.</i><i class="fas fa-clock"></i>
+        </span>
+        </li>
+        <li class="canal" id="canal-2"><span class="canal-icon"><i class="fas fa-envelope"></i>
+        </span>
+        <span class="tooltiptext"><b>Correo electronico</b> <br/>
+            Tiempo respuesta <i class="tiemporespuesta">15 min.</i><i class="fas fa-clock"></i>
+        </span>
+        </li>
+    <li class="canal" id="canal-3"><span class="canal-icon" id="rscentro"><i class="fas fa-comments"></i>
+        </span>
+        <span class="tooltiptext"><b>Redes sociales</b><br/>
+            Tiempo respuesta <i class="tiemporespuesta">2 min.</i><i class="fas fa-clock"></i>
+        </span>
+    </li>
+    <li class="canal abrirModal3" id="canal-4"><span class="canal-icon"><i class="fas fa-user-headset"></i>
+        </span>
+        <span class="tooltiptext"><b>Llamadas telefónicas</b><br/>
+            Tiempo respuesta <i class="tiemporespuesta">5 min.</i> <i class="fas fa-clock"></i>
+        </span>
+    </li>
+    <li class="canal abrirModal2"><span class="canal-icon">
+        <i class="far fa-walking"></i>
+        <!-- <i class="fas fa-walking"></i> -->
+        </span>
+        <span class="tooltiptext"><b>Presencial</b><br/>
+            Tiempo atención <i class="tiemporespuesta">15 min.</i> <i class="fas fa-clock"></i>
+        </span>
+    </li>
     </ul>
 
     <div id="canal">
-
-        
-
         <ul id="redsocial">
-            <li class="social"><span class="rs-icon"><a href="https://www.facebook.com/OsiptelOficial"
-                        target="_blank"><i class="fab fa-facebook-messenger"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a href="https://www.facebook.com/OsiptelOficial"
-                        target="_blank"><i class="fab fa-facebook"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a href="https://www.instagram.com/osipteloficial"
-                        target="_blank"><i class="fab fa-instagram"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a href="https://www.youtube.com/user/OsiptelOficial"
-                        target="_blank"><i class="fab fa-youtube"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a
-                        href="https://open.spotify.com/show/2RpK5uIOVDby01ulbTh3RQ?si=2G1YcLJvSEeH28hyFWWuVA&dl_branch=1"
-                        target="_blank"><i class="fab fa-spotify"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a href="" target="_blank"><i
-                            class="fab fa-whatsapp"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a href="https://vm.tiktok.com/ZMeyB57v6/" target="_blank"><i
-                            class="fab fa-tiktok"></i></a></span></li>
-            <li class="social"><span class="rs-icon"><a href="https://twitter.com/OSIPTEL" target="_blank"><i
-                            class="fab fa-twitter"></i></a></span></li>
+            <li class="social"><span class="rs-icon">
+                <a href="https://www.facebook.com/OsiptelOficial"
+                        target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </span>
+                <span class="tooltiptext"><b>Popularidad</b> +22K 
+                <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">10 min.</i> <i class="fas fa-clock"></i>
+                </span>    
+                </li>
+            <li class="social"><span class="rs-icon">
+                        <a href="https://www.linkedin.com/company/osiptel"
+                target="_blank"><i class="fab fa-linkedin-in"></i>
+                </a></span>
+                <span class="tooltiptext"><b>Popularidad</b> +20K 
+                <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">9 min.</i> <i class="fas fa-clock"></i>
+                </span>
+            </li>
+            <li class="social"><span class="rs-icon">
+                <a href="https://www.instagram.com/osipteloficial"
+                        target="_blank"><i class="fab fa-instagram"></i>
+                </a></span>
+                <span class="tooltiptext"><b>Popularidad</b> +18K 
+                <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">8 min.</i> <i class="fas fa-clock"></i>
+                </span>
+            </li>
+            <li class="social"><span class="rs-icon">
+                <a href="https://www.youtube.com/user/OsiptelOficial"
+                        target="_blank"><i class="fab fa-youtube"></i>
+                </a>
+                </span>
+                <br/>
+            <span class="tooltiptext"><b>Popularidad</b> +15K <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">7 min.</i> <i class="fas fa-clock"></i>
+            </span>
+            </li>
+            <li class="social"><span class="rs-icon">
+                <a href="https://open.spotify.com/show/2RpK5uIOVDby01ulbTh3RQ?si=2G1YcLJvSEeH28hyFWWuVA&dl_branch=1"
+                        target="_blank"><i class="fab fa-spotify"></i>
+                </a>
+            </span>
+            <span class="tooltiptext"><b>Popularidad</b> +14K <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">6 min.</i> <i class="fas fa-clock"></i>
+            </span>
+            </li>
+            <li class="social"><span class="rs-icon">
+                <a href="" target="_blank"><i
+                            class="fab fa-whatsapp"></i>
+                </a></span>
+                <span class="tooltiptext"><b>Popularidad</b> +12K <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">5 min.</i> <i class="fas fa-clock"></i>
+                </span>
+            </li>
+            <li class="social"><span class="rs-icon">
+                <a href="https://vm.tiktok.com/ZMeyB57v6/" target="_blank"><i
+                            class="fab fa-tiktok"></i>
+                </a></span>
+            <span class="tooltiptext"><b>Popularidad</b> +7K 
+                 <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">4 min.</i> <i class="fas fa-clock"></i>   
+            </span>
+            </li>
+            <li class="social"><span class="rs-icon">
+                <a href="https://twitter.com/OSIPTEL" target="_blank"><i
+                            class="fab fa-twitter"></i>
+                </a></span>
+            <span class="tooltiptext"><b>Popularidad</b> +5K 
+                <br/>
+                <i>Tiempo respuesta</i>
+                <i class="tiemporespuesta">3 min.</i> <i class="fas fa-clock"></i>   
+            </span>    
+            </li>
         </ul>
-
     </div>
 
-    <button id="abrirModals">Abrir Modal</button>
+    <!-- <div id="email">
+        <ul id="email-ul">
+            <li class="email-li"><span class="rs-icon"><i class="fas fa-envelope"></i></span> </li>
+            <li class="email-li abrirModal1"><span class="rs-icon"><i class="fas fa-desktop"></i></span> </li>
+        </ul>
+    </div> -->
 
-    <!-- The Modal -->
+    <!-- The Modal llamada-->
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="titulo-modal">Escoge una opción y llámanos</h3>
-            <p id="descripcion-modal">Algunos textos...</p>
+        <div class="modal-contento">
+            <span id="close1">&times;</span>
+            <h3 class="titulo-modal">
+                <span id="sonrisaico">
+                    <i class="far fa-smile"></i>
+                </span>
+                <span id="subtitulo">¿Que solicitud desea realizar?</span>
+            </h3>
             <ul id="llamada">
-                <li class="fono"><div class="llamada-icon"><i class="fas fa-phone-volume"></i></div> <a class="tel" href="tel:1844"> Fono Ayuda Costo de llamada local 1844</a></li>
-                <li class="fono"><div class="llamada-icon"><i class="fas fa-phone-volume"></i></div> <a class="tel" href="tel:225-1313"> Central Teléfonica 225-1313</a></li>
+                <li class="fono">
+                    <div class="llamada-icon">
+                    <span class="formico">
+                        <i class="fas fa-mobile"></i>
+                    </span>
+                </div>
+                <a class="formularios" href="#"> RECLAMO: TELEFONÍA FIJA</a>
+                    <span class="formico"><i class="fas fa-file-alt"></i></span>
+                    <span class="formico"><i class="fas fa-print"></i></span>
+                    <span class="formico"><i class="fas fa-file-invoice"></i></span>
+                </li>
+                <li class="fono"><div class="llamada-icon">
+                    <span class="formico">
+                        <i class="fas fa-phone-volume"></i>
+                    </span>
+                </div>
+                    <a class="formularios" href="#"> RECLAMO: TELEFONÍA MÓVIL</a>
+                    <span class="formico"><i class="fas fa-file-alt"></i></span>
+                    <span class="formico"><i class="fas fa-print"></i></span>
+                    <span class="formico"><i class="fas fa-file-invoice"></i></span>
+                </li>
+                <li class="fono">
+                    <div class="llamada-icon">
+                    <span class="formico">
+                        <i class="fas fa-mobile-alt"></i>
+                    </span>
+                </div>
+                    <a class="formularios" href="#"> RECLAMO: OTROS SERVICIOS TEL.</a>
+                    <span class="formico"><i class="fas fa-file-alt"></i></span>
+                    <span class="formico"><i class="fas fa-print"></i></span>
+                    <span class="formico"><i class="fas fa-file-invoice"></i></span>
+                </li>
+                <li class="fono">
+                    <div class="llamada-icon">
+                    <span class="formico">
+                        <i class="fas fa-planet-moon"></i>
+                    </span>
+                </div>
+                    <a class="formularios" href="#"> FORMATOS DE APELACIONES</a>
+                    <span class="formico"><i class="fas fa-file-alt"></i></span>
+                    <span class="formico"><i class="fas fa-print"></i></span>
+                    <span class="formico"><i class="fas fa-file-invoice"></i></span>
+                </li>
+                <li class="fono">
+                    <div class="llamada-icon">
+                    <span class="formico">
+                        <i class="fas fa-file"></i>
+                    </span>
+                </div>
+                    <a class="formularios" href="#"> FORMATO DE FORMULARIO DE QUEJAS</a>
+                    <span class="formico"><i class="fas fa-file-alt"></i></span>
+                    <span class="formico"><i class="fas fa-print"></i></span>
+                    <span class="formico"><i class="fas fa-file-invoice"></i></span>
+                </li>
             </ul>
         </div>
     </div>
-<div class="preguntas">
-    <ul id="preguntas">
-        <li class="frecuentes">1</li>
-        <li class="frecuentes">2</li>
-        <li class="frecuentes">3</li>
-        <li class="frecuentes">4</li>
+
+    <!-- The Modal llamada-->
+    <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content2">
+            <span id="close2">&times;</span>
+            <h3 class="titulo-modal">Atención presencial</h3>
+            <a href="https://www.osiptel.gob.pe/portal-del-usuario/contactenos/numeros-de-atencion-a-nivel-nacional/"
+                id="sede" target="_blank"
+                >
+                <i class="fas fa-building"></i>
+                Nuestras sedes
+            </a>
+            <p class="descripcion-modal">
+                <span id="atencion-presencial">
+                    Cuando visites una de nuestras sedes, toma en cuenta las 
+                    <br/>
+                    siguientes recomendaciones
+                </span>
+            </p>
+            <ul id="presencial">
+                <li class="presenciales">
+                <img src="/img/apertura-tienda-ingreso-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">USUARIOS</span>
+                     <!-- <h4 class="btnregistrar"> -->
+                      <a href="https://serviciosweb.osiptel.gob.pe/SICITA/Citas/Cita" class="btnregistro">Registrar cita</a>
+                     <!-- </h4> -->
+                </li>
+                <li class="presenciales">
+                <img src="/img/apertura-tienda-ingreso-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">FUNCIONARIOS OSIPTEL</span>
+                     <!-- <h4 class="btnregistrar"> -->
+                     <a href="https://serviciosweb.osiptel.gob.pe/SICITA/Citas/Cita" class="btnregistro">Registrar cita</a>    
+                     <!-- </h4> -->
+                </li>
+                <li class="presenciales">
+                    <img src="/img/apertura-tienda-distancia-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                    <span class="atencion-texto">Se respetará el metro y medio de distancia entre clientes, en la cola, y con los asesores.</span>
+                </li>
+                <li class="presenciales">
+                    <img src="/img/apertura-tienda-modulo-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">
+                         Sólo acercarse al módulo cuando el asesor lo indique.
+                     </span>
+                </li>
+                <li class="presenciales">
+                    <img src="/img/apertura-tienda-sintomas-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">Si muestras síntomas te recomendamos no entrar, por la seguridad de todos.</span>
+                </li>
+                <li class="presenciales">
+                    <img src="/img/apertura-tienda-documento-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">Aforo reducido, a cargo del personal de seguridad.</span>
+                </li>
+                <li class="presenciales">
+                    <img src="/img/apertura-tienda-seguridad-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">Párate detrás de la línea de seguridad marcada en el piso. </span>
+                </li>
+                <li class="presenciales">
+                    <img src="/img/apertura-tienda-mascarilla-v2@2x.png" 
+                     width="40"
+                     height="40"
+                     alt="">   
+                     <span class="atencion-texto">El uso de mascarilla es 100% obligatorio.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- The Modal llamada-->
+    <div id="myModal3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="close3">&times;</span>
+            <h3 class="titulo-modal">Escoge una opción y llámanos</h3>
+            <p class="horario">
+                <span>
+                    <b>Lunes a viernes</b> de 8:30 a.m. a 5:30 p.m. <br/>
+                    <b>Sábados</b> de 9:00 a.m. a 2:00 p.m.
+                </span>
+                
+            </p>
+            <ul id="atencion">
+                 <li class="atencion-li">
+                    <a class="sordos" href="https://docs.google.com/forms/d/e/1FAIpQLSeY4bPFU5PDqRqWZIA3C9XL7Z9RQeB6wLknZrOIVgJIDc3VpA/viewform">Registrar cita (Discapacidad auditiva)</a>
+                </li>
+                <li class="atencion-li">
+                    <a class="sordos" href="tel:1844">
+                    <i class="fas fa-phone-volume"></i>   
+                    Fono Ayuda Costo de llamada local - 1844
+                    </a>    
+                </li>
+                <li class="atencion-li">
+                    <a class="sordos" href="tel:225-1313"> 
+                        <i class="fas fa-phone-volume"></i>
+                        Central Teléfonica - 225-1313
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- The Modal llamada-->
+    <div id="myModal4" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content4">
+            <span id="close4">&times;</span>
+            <h3 class="titulo-modal4">Seleccione el lenguaje</h3>
+            <!-- <p class="descripcionlenguaje">
+                <span>This is the best languaje</span>
+            </p> -->
+            <ul id="lenguaje">
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">English</a>    
+                </li>
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">Español</a>
+                </li>
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">Quechua</a>
+                </li>
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">Aimara</a>
+                </li>
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">Shipibo Konibo</a>
+                </li>
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">Ashaninka</a>
+                </li>
+                <li class="lenguaje-li">
+                    <a class="idioma" href="#">Awajun</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <ul class="preguntas">
+        <h4 class="titulo-seccion"><span>TE ORIENTAMOS</span></h4>
+        <li class="frecuentes" style="background-color: white; color: black">
+            <h3>TUS DERECHOS</h3>
+            <p class="descripcion abrirModal1">Conoce tus derechos como consumidor de un servicio o producto de telecomunicaciones.
+                <br/>                
+                <br/>                
+                <a href="/derechos.html" class="btnorientacion"
+                style="border: 1px solid blue; color: blue;"
+                >Mis derechos</a>
+            </p>
+             
+        </li>
+        <li class="frecuentes">
+            <h3>COMUNICATE CON NOSOTROS</h3>
+            <p class="descripcion">Realiza una llamada para recibir consultar o resolver su duda.
+                <br/>                
+                <br/>           
+                <a  class="btnorientacion abrirModal3">Llamar</a>
+            </p>
+        </li>
     </ul>
-</div>
 
+    <ul class="preguntas" id="pfrecuentes">
+        <h4 class="titulo-seccion"><span>PREGUNTAS FRECUENTES</span></h4>
+        <li class="frecuentes" >
+            <p class="titulo-frecuentes">Que debes hacer si te robaron el celular</p>
+            <span>Debes reportar el robo o pérdida de tu celular ante tu empresa operadora...</span>
+            <p>
+               <a href="/derechos.html"  style="border: 1px solid blue; color: blue;" class="btnorientacion">Ver más...</a>
+            </p>
+        </li>
+        <li class="frecuentes" style="background-color: orange;">
+            <p class="titulo-frecuentes" >IMEI inválido</p>
+            <span>Sí, la empresa operadora debe suspender tu servicio de telefonía móvil...</span>
+            <p>
+               <a href="/derechos.html" class="btnorientacion"
+               style="border: 1px solid white; color: white;">Ver más...</a>
+            </p>
+        </li>
+        <li class="frecuentes" style="background-color: blue;">
+            <p class="titulo-frecuentes">Incrementos tarifarios</p>
+            <span>Sí, la empresa operadora puede incrementar la tarifa, previa comunicación...</span>
+            <p>
+               <a href="/derechos.html" class="btnorientacion"
+               style="border: 1px solid white; color: white;"
+               >Ver más...</a>
+            </p>
+        </li>
+        <li class="frecuentes" style="background-color: white; color: black">
+            <p class="titulo-frecuentes">Servicio de telefonía fija</p>
+            <span>A acceder a la primera línea telefónica, sin que se te condicione dicho acceso...</span>
+            <p>
+               <a href="/derechos.html" class="btnorientacion"
+                 style="border: 1px solid blue; color: blue;">Ver más...</a>
+            </p>
+        </li>
+    </ul>
 
+<button onclick="topFunction()" id="buttonscroll" title="Subir">Subir</button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="osip.js"></script>
-    <script src="fonawesome.js"></script>
+<script src="/js/osip.js"></script>
+<script src="/js/fonawesome.js"></script>
 </body>
-
 </html>

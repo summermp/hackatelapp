@@ -5,40 +5,61 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <base href="/">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <link rel="stylesheet" type="text/css" href="../css/derechos.css">
     <title>Canal</title>
 </head>
 <body>
-<div>LISTADO DE CANAL</div>
-<a th:href="@{/agregarcanal}">Crear canal</a>
+<style>
+    .indicadores{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<header>
+    <nav>
+        <ul id="nav-ul" >
+            <li class="nav-li"><img src="img/logo.png" alt=""></li>
+            <li class="nav-li"><a href="#pfrecuentes" class="nava">
+                <span class="nav-titulo">¡TE ORIENTAMOS!</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-sparkles"></i></span>
+            </a></li>
+            <li class="nav-li"><span class="nav-titulo">TUS DERECHOS</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-point-left"></i></span></li>
+            <li class="nav-li"><a href="#pfrecuentes" class="nava"
+            ><span class="nav-titulo">PREGUNTAS FRECUENTES</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-pointer"></i></span></a></li>
+            <li class="nav-li" id="#canal-ul">
+                <a href="#pfrecuentes" class="nava" >
+                    <span class="nav-titulo">CANALES DE ATENCIÓN</span>&nbsp <span class="nav-icon"> <i
+                        class="fas fa-praying-hands"></i></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="indicadores">
 <div th:if="${canals !=null and !canals.empty}">
-    <table id="mitabla">
+    <table id="mitabla" border="1">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>CONTADOR</th>
-            <th>ID PAGINA</th>
-            <th>Eliminar</th>
-            <th>Editar</th>
+<!--            <th>ID</th>-->
+            <th>CANAL</th>
+            <th>CONSULTAS</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="canal: ${canals}">
-            <td th:text="${canal.id}">ID</td>
-            <td th:text="${canal.nombre}">Nombre</td>
+<!--            <td th:text="${canal.id}">ID</td>-->
+            <td th:text="${canal.nombre}">CANAL</td>
             <td th:text="${canal.contador}">Contador</td>
-            <td th:text="${canal.canalpagina.id}">Id pagina</td>
-            <td><a style="color: red;" th:onclick="eliminar([[${canal.id}]])"><i class="fas fa-backspace"></i> Eliminar</a></td>
-            <td><a th:href="@{/editarcanal/}+${canal.id}"><i class="fas fa-edit"></i> Editar</a></td>
         </tr>
         </tbody>
     </table>
 </div>
 <div th:if="${canals == null and canals.empty}">La lista de canals esta vacia</div>
-<script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+</div>
 <script type="text/javascript" src="../js/fonawesome.js"></script>
 </body>
 </html>

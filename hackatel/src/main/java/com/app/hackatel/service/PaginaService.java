@@ -12,4 +12,6 @@ public interface PaginaService {
     public void eliminar(Pagina pagina);
 
     public Pagina buscarPagina(Pagina pagina);
+
+    void actualizarPagina(Integer id);
 }

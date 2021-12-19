@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/headerandfooter.css">
+    <title>Derecho</title>
+    <link rel="stylesheet" href="../css/derechos.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul id="nav-ul">
+            <li class="nav-li"><a th:href="@{/inicio}"><img src="img/logo.png" alt=""></a></li>
+            <li class="nav-li"><a href="#pfrecuentes" class="nava">
+                <span class="nav-titulo">¡TE ORIENTAMOS!</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-sparkles"></i></span>
+            </a></li>
+            <li class="nav-li"><span class="nav-titulo">TUS DERECHOS</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-point-left"></i></span></li>
+            <li class="nav-li"><a href="#pfrecuentes" class="nava"
+            ><span class="nav-titulo">PREGUNTAS FRECUENTES</span>&nbsp <span class="nav-icon"> <i
+                    class="fas fa-hand-pointer"></i></span></a></li>
+            <li class="nav-li" id="#canal-ul">
+                <a th:href="@{/inicio}" class="nava" >
+                    <span class="nav-titulo">CANALES DE ATENCIÓN</span>&nbsp <span class="nav-icon"> <i
+                        class="fas fa-praying-hands"></i></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<h3>Traducir derechos</h3>
+<h3>
+    <a th:href="@{/derechos/(lang=es)}">ES</a> |
+    <a th:href="@{/derechos/(lang=en)}">EN</a> |
+    <a th:href="@{/derechos/(lang=que)}">QUE</a> |
+    <a th:href="@{/derechos/(lang=shi)}">SHI</a> |
+    <a th:href="@{/derechos/(lang=ash)}">ASH</a> |
+    <a th:href="@{/derechos/(lang=awa)}">AWA</a> |
+    <a th:href="@{/derechos/(lang=ai)}">AIM</a>
+</h3>
+
+
+<h3>[[#{titulo.derecho}]]</h3>
+<div class="row-derechos">
+    <div class="col-d">
+        <div class="numero">
+            <h1>1</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.uno}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>2</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.dos}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>3</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.tres}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>4</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.cuatro}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>5</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.cinco}]]
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>6</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.seis}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>7</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.siete}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>8</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.ocho}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>9</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.nueve}]]
+            </p>
+        </div>
+    </div>
+    <div class="col-d">
+        <div class="numero">
+            <h1>10</h1>
+        </div>
+        <div class="descripcion">
+            <p class="texto-derecha">
+                [[#{derecho.diez}]]
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/fonawesome.js"></script>
+</body>
+</html>

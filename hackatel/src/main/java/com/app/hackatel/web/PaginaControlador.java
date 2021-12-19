@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -45,5 +46,23 @@ public class PaginaControlador {
         paginaService.eliminar(pagina);
         return "redirect:/pagina";
     }
+
+    @PostMapping("/actualizarpagina")
+    public void actualizarpagina(Model model){
+//        @RequestParam("idpagina") String idpagina
+        paginaService.actualizarPagina(1);
+    }
+
+    @GetMapping("/derechos")
+    public String derechos(){
+        return "derechos";
+    }
+
+    @GetMapping("/inicio")
+    public String inicio(){
+        return "osiptel";
+    }
+
+
 
 }

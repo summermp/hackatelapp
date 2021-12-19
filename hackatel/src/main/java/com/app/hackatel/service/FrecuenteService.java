@@ -12,4 +12,6 @@ public interface FrecuenteService {
     public void eliminar(Frecuente consulta);
 
     public Frecuente buscarFrecuente(Frecuente consulta);
+
+    void actualizarFrecuente(Integer id);
 }

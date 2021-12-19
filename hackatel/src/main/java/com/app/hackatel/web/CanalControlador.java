@@ -1,5 +1,4 @@
 package com.app.hackatel.web;
-
 import com.app.hackatel.domain.Canal;
 import com.app.hackatel.service.CanalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CanalControlador {
@@ -42,6 +42,12 @@ public class CanalControlador {
     @GetMapping("/eliminarcanal/{id}")
     public String eliminar(Canal canal){
         canalService.eliminar(canal);
+        return "redirect:/canal";
+    }
+
+    @PostMapping("/actualizarcanal")
+    public String actualizarcanal(@RequestParam("idcanal") String idcanal, Model model){
+        canalService.actualizarCanal(Integer.parseInt(idcanal));
         return "redirect:/canal";
     }
 
